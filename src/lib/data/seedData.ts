@@ -117,11 +117,19 @@ export const PRODUCTS: Product[] = [
 
 export const HOTSPOTS: SceneHotspot[] = [
   {
+    id: 'hotspot-entrance-enter',
+    zone: 'entrance',
+    title: 'Enter Café',
+    subtitle: 'Step into Espresso Sanctuary',
+    position: [0, 1.3, 0.4],
+    actionType: 'enter_cafe',
+  },
+  {
     id: 'hotspot-counter-cortado',
     zone: 'counter',
     title: 'Signature Cortado',
     subtitle: 'Tap to inspect roast & order',
-    position: [-2.0, 1.25, -0.4],
+    position: [-0.2, 1.25, 0.2],
     productId: 'prod-latte-01',
     actionType: 'open_product',
   },
@@ -130,7 +138,7 @@ export const HOTSPOTS: SceneHotspot[] = [
     zone: 'counter',
     title: 'Single-Origin Pour Over',
     subtitle: 'Estate V60 Barista Brew',
-    position: [-1.4, 1.25, -0.6],
+    position: [0.3, 1.25, 0.15],
     productId: 'prod-pour-02',
     actionType: 'open_product',
   },
@@ -139,7 +147,7 @@ export const HOTSPOTS: SceneHotspot[] = [
     zone: 'bakery',
     title: 'Normandy Butter Croissant',
     subtitle: 'Freshly baked at 7:00 AM',
-    position: [-0.6, 1.15, -1.1],
+    position: [-0.35, 1.3, 0],
     productId: 'prod-bakery-01',
     actionType: 'open_product',
   },
@@ -148,7 +156,7 @@ export const HOTSPOTS: SceneHotspot[] = [
     zone: 'seating',
     title: 'Reserve Table No. 4',
     subtitle: 'Sunlit Window Booth',
-    position: [1.8, 1.05, -0.9],
+    position: [0, 1.05, 0],
     actionType: 'open_reservation',
   },
   {
@@ -156,7 +164,7 @@ export const HOTSPOTS: SceneHotspot[] = [
     zone: 'brand',
     title: 'Our Estate Heritage',
     subtitle: 'From Shade-Grown Soil to Cup',
-    position: [2.5, 1.7, -2.8],
+    position: [0, 2.1, -0.4],
     actionType: 'open_story',
   },
 ];

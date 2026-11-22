@@ -65,5 +65,5 @@ export interface SceneHotspot {
   subtitle: string;
   position: [number, number, number];
   productId?: string;
-  actionType: 'open_product' | 'open_reservation' | 'open_story';
+  actionType: 'open_product' | 'open_reservation' | 'open_story' | 'enter_cafe';
 }

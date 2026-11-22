@@ -60,11 +60,11 @@ export const HotspotMarker: React.FC<HotspotMarkerProps> = ({ hotspot }) => {
           document.body.style.cursor = 'auto';
         }}
       >
-        <sphereGeometry args={[0.045, 16, 16]} />
+        <sphereGeometry args={[0.065, 16, 16]} />
         <meshStandardMaterial
           color={hovered ? '#FFF8EE' : '#C18B4B'}
           emissive="#C18B4B"
-          emissiveIntensity={hovered ? 0.9 : 0.4}
+          emissiveIntensity={hovered ? 1.0 : 0.5}
           roughness={0.2}
           metalness={0.8}
         />
@@ -72,17 +72,19 @@ export const HotspotMarker: React.FC<HotspotMarkerProps> = ({ hotspot }) => {
 
       {/* HTML Tooltip on hover / desktop visibility */}
       <Html
-        position={[0, 0.16, 0]}
+        position={[0, 0.18, 0]}
         center
         distanceFactor={6}
-        style={{ pointerEvents: 'none' }}
       >
         <div
-          className={`px-3 py-1.5 rounded-lg bg-cafe-dark/90 backdrop-blur-md border border-cafe-gold/40 text-cafe-cream text-center shadow-lg transition-all duration-200 whitespace-nowrap ${
-            hovered ? 'scale-105 opacity-100' : 'scale-95 opacity-80'
+          onClick={handleClick}
+          onPointerDown={(e) => e.stopPropagation()}
+          className={`px-3 py-1.5 rounded-lg bg-cafe-dark/95 backdrop-blur-md border border-cafe-gold/40 text-cafe-cream text-center shadow-lg transition-all duration-200 whitespace-nowrap cursor-pointer hover:border-cafe-gold hover:scale-105 pointer-events-auto ${
+            hovered ? 'scale-105 opacity-100 border-cafe-gold' : 'scale-95 opacity-85'
           }`}
         >
-          <p className="text-[11px] font-serif font-bold text-cafe-cream">
+          <p className="text-[11px] font-serif font-bold text-cafe-cream flex items-center justify-center gap-1">
+            <span className="w-1.5 h-1.5 rounded-full bg-cafe-gold animate-pulse inline-block" />
             {hotspot.title}
           </p>
           <p className="text-[9px] text-cafe-gold/90 font-medium">

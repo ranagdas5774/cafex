@@ -44,7 +44,15 @@ export const useSceneStore = create<SceneState>((set) => ({
   },
 
   openHotspot: (hotspotId: string, actionType: string, productId?: string) => {
-    if (actionType === 'open_product' && productId) {
+    if (actionType === 'enter_cafe') {
+      const config = ZONES.counter;
+      set({
+        currentZone: 'counter',
+        targetCameraPos: config.cameraPosition,
+        targetCameraLookAt: config.cameraLookAt,
+        activeHotspotId: null,
+      });
+    } else if (actionType === 'open_product' && productId) {
       set({
         activeHotspotId: hotspotId,
         activeProductId: productId,
